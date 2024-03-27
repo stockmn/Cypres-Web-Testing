@@ -1,14 +1,14 @@
 {
   "stats": {
     "suites": 1,
-    "tests": 1,
+    "tests": 2,
     "passes": 0,
     "pending": 0,
-    "failures": 1,
-    "start": "2024-03-27T20:52:08.948Z",
-    "end": "2024-03-27T20:52:25.292Z",
-    "duration": 16344,
-    "testsRegistered": 1,
+    "failures": 2,
+    "start": "2024-03-27T20:52:56.178Z",
+    "end": "2024-03-27T20:53:21.881Z",
+    "duration": 25703,
+    "testsRegistered": 2,
     "passPercent": 0,
     "pendingPercent": 0,
     "other": 0,
@@ -18,41 +18,63 @@
   },
   "results": [
     {
-      "uuid": "7108bc34-05d7-4506-8834-5f96778ae225",
+      "uuid": "f0ad6849-cb6a-4379-8708-bbd2cb23c00b",
       "title": "",
-      "fullFile": "cypress\\e2e\\creditCard.cy.js",
-      "file": "cypress\\e2e\\creditCard.cy.js",
+      "fullFile": "cypress\\e2e\\navigateHeader.cy.js",
+      "file": "cypress\\e2e\\navigateHeader.cy.js",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "2411843c-12ea-4bd8-bcf2-2508231ee63a",
-          "title": "Navigate the website",
+          "uuid": "1b1ca829-b65d-44e8-b4f1-e42f51685ad6",
+          "title": "Navigation through website headers",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "User visit credit card section of the website and scroll down to credit card page and Click on im-visa-international-gold-card",
-              "fullTitle": "Navigate the website User visit credit card section of the website and scroll down to credit card page and Click on im-visa-international-gold-card",
+              "title": "should display elements of the first header row",
+              "fullTitle": "Navigation through website headers should display elements of the first header row",
               "timedOut": null,
-              "duration": 10610,
+              "duration": 9024,
               "state": "failed",
               "speed": null,
               "pass": false,
               "fail": true,
               "pending": false,
               "context": null,
-              "code": "creditCardMenu.creditCardMenuNavigation();",
+              "code": "navigateHeaders.navigateToTheFirstHeaderNavAndElement();",
               "err": {
-                "message": "TypeError: creditCardMenu.creditCardMenuNavigation is not a function",
-                "estack": "TypeError: creditCardMenu.creditCardMenuNavigation is not a function\n    at Context.eval (webpack:///./cypress/e2e/creditCard.cy.js:14:23)",
-                "diff": null
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '[ <p.mb-0.font-size-sm.mr-3>, 1 more... ]' to have text 'Select Country', but the text was 'Select CountrySelect Country'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '[ <p.mb-0.font-size-sm.mr-3>, 1 more... ]' to have text 'Select Country', but the text was 'Select CountrySelect Country'\n    at NavigateHeaders.navigateToTheFirstHeaderNavAndElement (webpack:///./cypress/support/pageObjects/navigateHeader.js:9:65)\n    at Context.eval (webpack:///./cypress/e2e/navigateHeader.cy.js:13:24)",
+                "diff": "- 'Select CountrySelect Country'\n+ 'Select Country'\n"
               },
-              "uuid": "20e8aa46-1c88-471a-9d64-e7ea2e79c38a",
-              "parentUUID": "2411843c-12ea-4bd8-bcf2-2508231ee63a",
+              "uuid": "0fb7f284-7f4c-4f42-9855-5f69158ec80d",
+              "parentUUID": "1b1ca829-b65d-44e8-b4f1-e42f51685ad6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should display elements of the second header row",
+              "fullTitle": "Navigation through website headers should display elements of the second header row",
+              "timedOut": null,
+              "duration": 11084,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "navigateHeaders.navigateToTheSecondHeaderNav();",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<li#menu-item-12092.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-home.current-menu-item.page_item.page-item-2.current_page_item.menu-item-12092>' to have text 'HOME', but the text was 'Home'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<li#menu-item-12092.menu-item.menu-item-type-post_type.menu-item-object-page.menu-item-home.current-menu-item.page_item.page-item-2.current_page_item.menu-item-12092>' to have text 'HOME', but the text was 'Home'\n    at NavigateHeaders.navigateToTheSecondHeaderNav (webpack:///./cypress/support/pageObjects/navigateHeader.js:18:59)\n    at Context.eval (webpack:///./cypress/e2e/navigateHeader.cy.js:17:24)",
+                "diff": "- 'Home'\n+ 'HOME'\n"
+              },
+              "uuid": "325754c6-52c0-4a12-86e2-d778d7212476",
+              "parentUUID": "1b1ca829-b65d-44e8-b4f1-e42f51685ad6",
               "isHook": false,
               "skipped": false
             }
@@ -60,11 +82,12 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "20e8aa46-1c88-471a-9d64-e7ea2e79c38a"
+            "0fb7f284-7f4c-4f42-9855-5f69158ec80d",
+            "325754c6-52c0-4a12-86e2-d778d7212476"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 10610,
+          "duration": 20108,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
