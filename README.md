@@ -1,2 +1,2 @@
 To run the test use 
-npm run cypress:report
+*npm run cypress:report*
